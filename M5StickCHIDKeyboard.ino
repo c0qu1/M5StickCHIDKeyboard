@@ -1,4 +1,4 @@
-#include <M5Stack.h>
+#include <M5StickC.h>
 
 /*
  * this code is based on https://github.com/nkolban/esp32-snippets/blob/9112aebed4ef86cfccccfdbf3aedf8fe44ec08e4/cpp_utils/tests/BLETests/SampleHIDKeyboard.cpp
@@ -172,7 +172,7 @@ public:
   void run(void *data) {
     ESP_LOGD(LOG_TAG, "Starting BLE work!");
 
-    BLEDevice::init("M5Stack-HID");
+    BLEDevice::init("M5StickC-HID");
     pServer = BLEDevice::createServer();
     pServer->setCallbacks(new MyCallbacks());
 
@@ -316,7 +316,7 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   if(isConnected && M5.BtnA.wasPressed()) {
-    MyTask *task = new MyTask("Hello From M5Stack!\n");
+    MyTask *task = new MyTask("Hello From M5StickC!\n");
     task->start();
     tasks.push_back(task);
   }
