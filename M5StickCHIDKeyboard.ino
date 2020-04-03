@@ -297,8 +297,8 @@ void setup() {
   log_e("HELLO_ERR");
 
   Serial.begin(115200);         // SERIAL
-  
-  M5.Lcd.setBrightness(200);    // BRIGHTNESS = MAX 255
+
+  //M5.Lcd.setBrightness(200);    // BRIGHTNESS = MAX 255
   M5.Lcd.fillScreen(BLACK);     // CLEAR SCREEN
   M5.Lcd.setTextColor(WHITE);
   M5.Lcd.setTextSize(2);
@@ -328,10 +328,6 @@ void loop() {
     task->start();
     tasks.push_back(task);
   }
-  
-  if (M5.BtnC.wasPressed()) {
-  }
+
   M5.update();
 }
-
-
